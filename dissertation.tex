@@ -20,7 +20,7 @@
 %\newcommand{\mydriver}{ps2pdf} %Same as the one for dvips except Ghostscript compatible.
 
 
-\documentclass[12pt,letterpaper\mydriver]{./styles/thesis}  %12pt > 11pt
+\documentclass[12pt,letterpaper,\mydriver]{./styles/thesis}  %12pt > 11pt
 
 \usepackage{titlesec}
    \titleformat{\chapter}
@@ -97,19 +97,20 @@
 \include{supertabular}
 \titleformat{\chapter}
       {\normalfont\large}{Appendix \thechapter:}{1em}{}
+\appendix
 \include{./text/A_AppendixA}
 \include{./text/B_AppendixB}
 
 %DEBUG: ONLY USE THIS LINE WITH NO CITATIONS
 ~\cite{*}
 
-%\renewcommand{\baselinestretch}{1}
-%\small\normalsize
+\renewcommand{\baselinestretch}{1}
+\small\normalsize
 %\include{Bibliography}
 %When using Bibtex, delete the previous line and use the following
 %three lines.  
 \newpage
 \bibliographystyle{unsrt} 
-\bibliography{./bib/dissertation}
+\bibliography{../bib/dissertation}
 
 \end{document}

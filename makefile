@@ -21,16 +21,14 @@ texoutputfiles = *~ *.aux *.lof *.log *.toc *.bbl *.out *.blg
 .PHONY=clean veryclean
 
 
-$(TITLE).pdf: $(TITLE).tex $(BIBDIR)/$(TITLE).bbl 
+$(TITLE).pdf: $(TITLE).tex $(AUXDIR)/$(TITLE).bbl
 	$(LATEX) $(LFLAGS) $(TITLE).tex 
 	$(LATEX) $(LFLAGS) $(TITLE).tex
 	mv $(AUXDIR)/$(TITLE).pdf .
 
 
-$(BIBDIR)/$(TITLE).bbl: $(AUXDIR)/$(TITLE).aux
-	cp $(BIBDIR)/$(TITLE).bib $(AUXDIR)/$(BIBDIR)/
+$(AUXDIR)/$(TITLE).bbl: $(AUXDIR)/$(TITLE).aux
 	$(MAKE) -C aux
-	mv $(AUXDIR)/$(TITLE).bbl $(BIBDIR)
 
 
 
