@@ -22,8 +22,8 @@ texoutputfiles = *~ *.aux *.lof *.log *.toc *.bbl *.out *.blg
 
 
 $(TITLE).pdf: $(TITLE).tex $(AUXDIR)/$(TITLE).bbl
+	$(LATEX) $(LFLAGS) $(TITLE).tex -draftmode
 	$(LATEX) $(LFLAGS) $(TITLE).tex 
-	$(LATEX) $(LFLAGS) $(TITLE).tex
 	mv $(AUXDIR)/$(TITLE).pdf .
 
 
@@ -33,8 +33,8 @@ $(AUXDIR)/$(TITLE).bbl: $(AUXDIR)/$(TITLE).aux
 
 
 $(AUXDIR)/$(TITLE).aux: $(HEADFILES) $(TEXTFILES)
-	$(LATEX) $(LFLAGS) $(TITLE).tex
-	$(LATEX) $(LFLAGS) $(TITLE).tex
+	$(LATEX) $(LFLAGS) $(TITLE).tex -draftmode
+	$(LATEX) $(LFLAGS) $(TITLE).tex -draftmode
 
 
 
