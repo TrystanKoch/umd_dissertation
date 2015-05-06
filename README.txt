@@ -74,12 +74,22 @@ Helpful:
 
 
 
-=== Operation Summary ===
+=== Useful Commands ===
 
  Type 'make' into the commandline when in the root 'dissertation/'
- folder.
+ folder to make the dissertation.
 
- GNUMake will then compile the 'dissertation.tex' file, which draws from
+ Type 'make clean' to erase any temporary files, and any extraneous
+ output file that landed outside of the 'aux/' folder.
+
+ Type 'make veryclean' to erase all output files in the 'aux'/ folder
+ and the final output pdf.
+
+
+
+=== Operation Summary ===
+
+ GNUMake will compile the 'dissertation.tex' file, which draws from
  the 'headmatter/' and 'text/' folders. Any auxfiles are sent to the 
  'aux/' folder. It will do this twice, without outputting a pdf.
 
@@ -95,7 +105,6 @@ Helpful:
  all files, auxilliary and otherwise, into the 'aux/' file. The final
  command is a simple 'mv' command to take the finished pdf into the root
  'dissertation/' folder for easy access.
-
 
 
 
@@ -115,9 +124,4 @@ Helpful:
 
  Finally, hyperref allows you to change how programs display the final
  pdf when opened. I have included a third '\hypersetup' for this.
-
-
-
-
-
 
