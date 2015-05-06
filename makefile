@@ -46,4 +46,5 @@ clean:
 veryclean: clean
 	-rm -f $(patsubst %,aux/%,$(texoutputfiles))
 	-rm -f $(patsubst %,aux/*/%,$(texoutputfiles))
+	-rm -f $(TITLE).pdf
 	-rm -f aux/q.tex
