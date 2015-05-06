@@ -7,6 +7,7 @@
 
 %The YourInformation file was created by Freja Nordsiek, 2014.
 %Code for linking the TOC titles to the text in the pdf file was created by Freja Nordsiek, 2014.
+%Slightly refactored by Trystan Koch, May 2015.
 
 
 % Select the version that fits how you are making this LaTeX document (its driver).
@@ -53,8 +54,34 @@
 \setlength{\parindent}{.4in}
 \pagestyle{empty}
 
+
+% Set PDF Metadata
+\hypersetup{
+  pdftitle={Title Goes Here},           % title
+  pdfauthor={Trystan Benjamin Koch},    % author
+  pdfsubject={Quantum Chaos},           % subject of the document
+  pdfkeywords={Quantum Graphs}          % list of keywords
+              {Wave Chaos}
+}
+
+% hyperref setup
+\hypersetup{
+  colorlinks=false,            % false: boxed links won't show in printed copies
+  linktoc=all,                 % part of ToC that is the link
+  linkbordercolor={1.0 0.9 0.9}, % box color of internal links
+  citebordercolor={0.9 1.0 0.9}, % box color of links to bibliography
+  filebordercolor={0.9 1.0 1.0}, % box color of file links
+  urlbordercolor={1.0 0.9 1.0}   % box color of url links
+}
+
+% pdf options - Entirely optional
+\hypersetup{
+  pdfstartview={FitV}  % Opens the gile fit to the window vertically
+}
+
+
 \begin{document}
-\hypersetup{pageanchor=false} % Avoids duplicate page names
+\hypersetup{pageanchor=false} % Avoids duplicate page names 
 \include{./headmatter/01_Abstract} %(must be first, required, non-numbered)
 \include{./headmatter/02_Titlepage} %(must follow Abstract, required, non-numbered)
 \include{./headmatter/03_Copyright} %(highly recommended, non-numbered)
