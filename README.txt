@@ -41,10 +41,11 @@ Helpful:
 === Directory Structure ===
 
  dissertation/
-   Contains only files directly pertinant to the thesis, its creation, and the
-   repository I've created for version control. Most importantly it contains the
-   makefile for compiling the thesis, and the main LaTeX input. When make is run,
-   it will also contain the output pdf, which is ignored by the repository
+   Contains only files directly pertinant to the thesis, its creation, 
+   and the repository I've created for version control. Most importantly
+   it contains the makefile for compiling the thesis, and the main LaTeX
+   input. When make is run, it will also contain the output pdf, which 
+   is ignored by the repository.
  
  dissertation/aux
    Contains all the auxiliary and output files from pdflatex. pdflatex 
