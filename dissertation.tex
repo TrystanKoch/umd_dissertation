@@ -1,27 +1,44 @@
-% March 2015 (TOC contents linked in red in pdf file)
-%This template was prepared by Dorothea F. Brosius of the 
-%Institute for Electronics and Applied Physics, University of Maryland, College Park, MD
-%The template was last updated in March 2015
-%Thesis Main Page used with thesis.sty based on the
-%University of Maryland Electronic Thesis and Dissertation (ETD) Style Guide
+%%% March 2015 (TOC contents linked in red in pdf file)
+%%%  This template was prepared by Dorothea F. Brosius of the Institute 
+%%%  for Electronics and Applied Physics, University of Maryland,  
+%%%  College Park, MD.
 
-%The YourInformation file was created by Freja Nordsiek, 2014.
-%Code for linking the TOC titles to the text in the pdf file was created by Freja Nordsiek, 2014.
-%Slightly refactored by Trystan Koch, May 2015.
+%%%  The template was last updated in March 2015
+%%%  Thesis Main Page used with thesis.sty based on the
+%%%  University of Maryland Electronic Thesis and Dissertation (ETD)
+%%%  Style Guide.
+
+%%%  The YourInformation file was created by Freja Nordsiek, 2014.
+%%%  Code for linking the TOC titles to the text in the pdf file was 
+%%%  created by Freja Nordsiek, 2014.
+
+%%%  Refactored by Trystan Koch, May 2015.
 
 
-% Select the version that fits how you are making this LaTeX document (its driver).
+% Select the version that fits how you are making this LaTeX document
+% (i.e. the driver you use).
 % The first two are the most likely ones to be needed.
 %
-\newcommand{\mydriver}{pdftex} %Making a PDF directly using pdflatex.
-%\newcommand{\mydriver}{dvipdfmx} %Making a DVI and converting that to PDF using dvipdfmx.
-%\newcommand{\mydriver}{dvipdfm} %Making a DVI and converting that to PDF using dvipdfm.
-%\newcommand{\mydriver}{dvips} %Making a DVI and converting that to PS using dvips.
-%\newcommand{\mydriver}{dvipsone} %Making a DVI and converting that to PS using dvipsone.
-%\newcommand{\mydriver}{ps2pdf} %Same as the one for dvips except Ghostscript compatible.
+%Making a PDF directly using pdflatex.
+\newcommand{\mydriver}{pdftex}
+%
+%Making a DVI and converting that to PDF using dvipdfmx.
+%\newcommand{\mydriver}{dvipdfmx} 
+%
+%Making a DVI and converting that to PDF using dvipdfm.
+%\newcommand{\mydriver}{dvipdfm}
+%
+%Making a DVI and converting that to PS using dvips.
+%\newcommand{\mydriver}{dvips}
+%
+%Making a DVI and converting that to PS using dvipsone.
+%\newcommand{\mydriver}{dvipsone}
+%
+%Same as the one for dvips except Ghostscript compatible.
+%\newcommand{\mydriver}{ps2pdf}
 
 
-\documentclass[12pt,letterpaper,\mydriver]{./styles/thesis}  %12pt > 11pt
+\documentclass[12pt,letterpaper,\mydriver]{./styles/thesis} %12pt > 11pt
 
 \usepackage{titlesec}
    \titleformat{\chapter}
@@ -46,12 +63,13 @@
 
 
 
-\newcommand{\tbsp}{\rule{0pt}{18pt}} %used to get a vertical distance after \hline
+\newcommand{\tbsp}{\rule{0pt}{18pt}} % Vertical distance after \hline
 \renewcommand{\baselinestretch}{2}
 \setlength{\textwidth}{5.9in}
 \setlength{\textheight}{9in}
 \setlength{\topmargin}{-.50in}
-%\setlength{\topmargin}{0in}    %use this setting if the printer makes the the top margin 1/2 inch instead of 1 inch
+%Use if the printer makes the the top margin 1/2 inch instead of 1 inch
+%\setlength{\topmargin}{0in}    
 \setlength{\oddsidemargin}{.55in}
 \setlength{\parindent}{.4in}
 \pagestyle{empty}
@@ -66,9 +84,14 @@
               {Wave Chaos}
 }
 
-% hyperref setup
+% Macro to update information across various pages
+\newcommand{\dissertationtitle}{TITLE GOES HERE} 
+\newcommand{\myfullname}{Trystan Benjamin Koch}
+\newcommand{\gradyear}{2016}
+
+% Hyperlink reference options
 \hypersetup{
-  colorlinks=false,            % false: boxed links won't show in printed copies
+  colorlinks=false,            % false: boxed links won't show in print
   linktoc=all,                 % part of ToC that is the link
   linkbordercolor={1.0 0.9 0.9}, % box color of internal links
   citebordercolor={0.9 1.0 0.9}, % box color of links to bibliography
@@ -76,48 +99,54 @@
   urlbordercolor={1.0 0.9 1.0}   % box color of url links
 }
 
-% pdf options - Entirely optional
+% Misc. PDF options - Entirely optional
 \hypersetup{
-  pdfstartview={FitV}  % Opens the gile fit to the window vertically
+  pdfstartview={FitV}  % Opens the file fit to the window vertically
 }
 
 
+%%% Content begins here %%%
 \begin{document}
+
+% These three sections are not numbered.
 \hypersetup{pageanchor=false} % Avoids duplicate page names 
-\include{./headmatter/01_Abstract} %(must be first, required, non-numbered)
-\include{./headmatter/02_Titlepage} %(must follow Abstract, required, non-numbered)
-\include{./headmatter/03_Copyright} %(highly recommended, non-numbered)
+\pagenumbering{Alph} % For pdf sidebar
+\include{./headmatter/01_Abstract}  % (required, must be first)
+\include{./headmatter/02_Titlepage} % (required, must follow Abstract)
+\include{./headmatter/03_Copyright} % (highly recommended)
 
 
-%Pages from this point start at lower-case Roman number ii)
-\hypersetup{pageanchor=true} % Reinstates anchored pages after above
+% Remaining head-matter uses lower-case roman letters.
+\hypersetup{pageanchor=true} % Reinstates anchored pages.
 \pagestyle{plain}
-\pagenumbering{roman}
-\setcounter{page}{2}
+\pagenumbering{roman} % Use lower-case Roman numbering
+\setcounter{page}{2} % Start at lower-case Roman ii
+\include{./headmatter/04_Preface}          % (optional)
+%\include{./headmatter/05_Foreword}         % (optional)
+%\include{./headmatter/06_Dedication}       % (optional)
+\include{./headmatter/07_Acknowledgements} % (optional)
 
-\include{./headmatter/04_Preface}  %(if present, start at lower-case Roman number ii)
-\include{./headmatter/05_Foreword} %(if present, lower-case Roman)
-\include{./headmatter/06_Dedication} %(if present, lower-case Roman)
-\include{./headmatter/07_Acknowledgements} %(if present, lower-case Roman)
-
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{Table of Contents}
 \renewcommand{\baselinestretch}{1}
 \small\normalsize
-\tableofcontents %(required, lower-case Roman)
+\clearpage\phantomsection
+\tableofcontents % (required)
 \newpage
-%\listoftables %(if present, lower-case Roman)
-%\newpage
-\listoffigures %(if present, lower-case Roman)
+\listoftables % (optional)
 \newpage
-% LIST OF ABBREVIATIONS
-\addcontentsline{toc}{chapter}{List of Abbreviations}
-\include{./headmatter/08_Abbreviations}
+\listoffigures % (optional)
+\newpage
+% LIST OF ABBREVIATIONS (optional)
+\include{./headmatter/08_Abbreviations} 
 
 \newpage
 \setlength{\parskip}{0em}
 \renewcommand{\baselinestretch}{2}
 \small\normalsize
 
-%Pages from this point start at Arabic numeral 1
+% Mai
+% Pages from this point start at Arabic numeral 1
 \setcounter{page}{1}
 \pagenumbering{arabic}
 \include{./text/01_Chapter1}
