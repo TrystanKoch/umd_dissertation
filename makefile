@@ -1,5 +1,8 @@
 export
 
+TEXINPUTS=.:./styles/:
+export TEXINPUTS
+
 TITLE=dissertation
 LATEX=pdflatex
 BIBTEX=bibtex

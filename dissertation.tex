@@ -38,7 +38,7 @@
 %\newcommand{\mydriver}{ps2pdf}
 
 
-\documentclass[12pt,letterpaper,\mydriver]{./styles/thesis} %12pt > 11pt
+\documentclass[12pt,letterpaper,\mydriver]{thesis} %12pt > 11pt
 
 \usepackage{titlesec}
    \titleformat{\chapter}
@@ -53,7 +53,7 @@
 \usepackage{multirow}
 \usepackage{tabls}
 \usepackage{wrapfig}
-\usepackage{./styles/slashbox}
+\usepackage{slashbox}
 \usepackage{longtable}
 \usepackage{supertabular}
 \usepackage{subeqn}
@@ -75,19 +75,22 @@
 \pagestyle{empty}
 
 
+% Macro to update information across various pages
+\newcommand{\dissertationtitle}{TITLE GOES HERE} 
+\newcommand{\myfullname}{Trystan Benjamin Koch}
+\newcommand{\gradyear}{2017}
+
+
 % Set PDF Metadata
 \hypersetup{
-  pdftitle={Title Goes Here},           % title
-  pdfauthor={Trystan Benjamin Koch},    % author
+  pdftitle={\dissertationtitle},        % title
+  pdfauthor={\myfullname},              % author
   pdfsubject={Quantum Chaos},           % subject of the document
   pdfkeywords={Quantum Graphs}          % list of keywords
               {Wave Chaos}
 }
 
-% Macro to update information across various pages
-\newcommand{\dissertationtitle}{TITLE GOES HERE} 
-\newcommand{\myfullname}{Trystan Benjamin Koch}
-\newcommand{\gradyear}{2017}
+
 
 % Hyperlink reference options
 \hypersetup{
@@ -152,7 +155,7 @@
 \include{./text/01_Chapter1}
 \include{./text/02_Chapter2}
 \include{./text/03_Chapter3}
-\include{supertabular}
+%\include{supertabular}
 \titleformat{\chapter}
       {\normalfont\large}{Appendix \thechapter:}{1em}{}
 \appendix
